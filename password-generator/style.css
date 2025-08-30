@@ -105,3 +105,19 @@ body {
 #size:focus {
     outline: 2px solid var(--color-primary-1);
 }
+
+#generate {
+    background-color: var(--color-primary-1);
+    border: none;
+    margin-top: 12px;
+    padding: 10px 0px;
+    border-radius: 4px;
+    color: var(--color-neutral-3);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#generate:hover {
+    background-color: var(--color-primary-2);
+}
