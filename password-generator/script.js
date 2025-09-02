@@ -5,6 +5,21 @@ function getChartTypes() {
   const specialNumber = document.querySelector(
     "#include_special_character"
   ).checked;
+  const ChartTypes = [];
+  if (upperCase) {
+    ChartTypes.push("ABCDEFGHIJKLMNPQRSTUVWXYZ");
+  }
+  if (lowerCase) {
+    ChartTypes.push("abcdefghijklmnpqrstuvwxyz");
+  }
+  if (Number) {
+    ChartTypes.push("1234567890");
+  }
+  if (specialNumber) {
+    ChartTypes.push("!@#$%^&*()_-+={}[]|\\/?><:;\"'.,~`");
+  }
+
+  return console.log(ChartTypes);
 }
 
 document.querySelector("#generate").addEventListener("click", function () {
