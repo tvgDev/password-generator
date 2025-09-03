@@ -19,9 +19,23 @@ function getChartTypes() {
     ChartTypes.push("!@#$%^&*()_-+={}[]|\\/?><:;\"'.,~`");
   }
 
-  return console.log(ChartTypes);
+  return ChartTypes;
+}
+
+function getPasswordSize() {
+  const size = document.querySelector("#size").value;
+
+  return size;
+}
+
+function randomCharType(ChartTypes) {
+  const randomIndex = Math.floor(Math.random() * ChartTypes.length);
+
+  return ChartTypes[randomIndex][
+    Math.floor(Math.random() * ChartTypes[randomIndex].length)
+  ];
 }
 
 document.querySelector("#generate").addEventListener("click", function () {
-  getChartTypes();
+  console.log(randomCharType(getChartTypes()));
 });
