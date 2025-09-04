@@ -25,6 +25,10 @@ function getChartTypes() {
 function getPasswordSize() {
   const size = document.querySelector("#size").value;
 
+  if (isNaN(size) || size < 4 || size > 128) {
+    alert("Tamanho inválido, Digite um número entre 4 e 128!");
+  }
+
   return size;
 }
 
@@ -36,6 +40,16 @@ function randomCharType(ChartTypes) {
   ];
 }
 
+function generatePassword(size, ChartTypes) {
+  let passwordGenerated = "";
+
+  while (passwordGenerated.length < size) {
+    passwordGenerated += randomCharType(ChartTypes);
+  }
+
+  return passwordGenerated;
+}
+
 document.querySelector("#generate").addEventListener("click", function () {
-  console.log(randomCharType(getChartTypes()));
+  console.log(generatePassword(getPasswordSize(), getChartTypes()));
 });
