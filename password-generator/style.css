@@ -53,6 +53,10 @@ body {
     padding: 8px 8px;
 }
 
+#password_container.show {
+    display: flex;
+}
+
 #password {
     font-size: 14px;
     white-space: nowrap;

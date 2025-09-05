@@ -51,5 +51,11 @@ function generatePassword(size, ChartTypes) {
 }
 
 document.querySelector("#generate").addEventListener("click", function () {
-  console.log(generatePassword(getPasswordSize(), getChartTypes()));
+  const size = getPasswordSize();
+  const ChartTypes = getChartTypes();
+
+  const passwordGenerated = generatePassword(size, ChartTypes);
+
+  document.querySelector("#password_container").classList.add("show");
+  document.querySelector("#password").textContent = passwordGenerated;
 });
